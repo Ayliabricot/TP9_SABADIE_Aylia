@@ -3,15 +3,15 @@
     
     require_once("./Model/pdo.php");
 
-    $resultat = $dbPDO->prepare("SELECT * FROM classes");
+    $resultat = $dbPDO->prepare("SELECT * FROM professeurs");
     $resultat->execute();
 
-    $classes=$resultat->fetchAll();
+    $professeurs=$resultat->fetchAll();
 
     echo "<ul>";
 
-    foreach ($classes as $classe){
-      echo "<li>".$classe["libelle"]."</li>";
+    foreach ($professeurs as $professeur){
+      echo "<li>".$professeur["prenom"]." ".$professeur["nom"]."</li>";
     }
 
     echo "</ul>";
