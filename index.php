@@ -1,5 +1,5 @@
 <?php
-    ob_start();
+      ob_start();
     
     require_once("./Model/pdo.php");
 
@@ -16,7 +16,16 @@
 
     echo "</ul>";
 
-    $content = ob_get_clean();
-    require("./../inc/template.php");
 
 ?>
+
+<form action="./Views/nouvelle_matiere.php" method="post">
+        
+      Libelle : <input type="text" name="libelle" />
+            
+      <input type="submit" value="Valider" />
+</form>
+
+<?php $content = ob_get_clean(); ?>
+
+<?php require('../inc/template.php'); ?>
