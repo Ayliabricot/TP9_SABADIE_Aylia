@@ -3,14 +3,20 @@
     
     require_once("../Model/pdo.php");
 
-
+    $resultat = $dbPDO->prepare("INSERT INTO matiere(lib) VALUES (:lib)");
+    $resultat->execute([
+      "lib"=>$_POST["libelle"]
+    ]);
 
     echo "<br>Requête effectuée.";
 
 ?>
 
-<?php $content = ob_get_clean(); ?>
+<form action="../index.php" method="post">
+      <input type="submit" value="Valider" />
+</form>
 
+<?php $content = ob_get_clean(); ?>
 
 <?php 
   $deep=True;
