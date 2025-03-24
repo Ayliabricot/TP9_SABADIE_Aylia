@@ -20,6 +20,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php 
-  $deep=True;
-  require($path.'../../inc/template.php'); ?>
+<?php require('../template.php'); ?>

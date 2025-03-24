@@ -1,9 +1,9 @@
 <?php
       ob_start();
     
-    require_once("./Model/pdo.php");
+    require_once("Model/pdo.php");
 
-    $resultat = $dbPDO->prepare("SELECT * FROM etudiants INNER JOIN classes ON etudiants.classe_id=classes.id");
+    $resultat = $dbPDO->prepare("SELECT etudiants.id AS id, etudiants.prenom AS prenom, etudiants.nom AS nom, classes.libelle AS classe FROM etudiants INNER JOIN classes ON etudiants.classe_id = classes.id");
     $resultat->execute();
 
     $etudiants=$resultat->fetchAll();
@@ -11,7 +11,8 @@
     echo "<br><h3>Les élèves :</h3><ul>";
 
     foreach ($etudiants as $etudiant){
-      echo "<li>".$etudiant["prenom"]." ".$etudiant["nom"]." ".$etudiant["libelle"]."</li>";
+      $id=$etudiant['id'];
+      echo "<li>".$etudiant["prenom"]." ".$etudiant["nom"]." ".$etudiant["classe"]."<a href='Views/modif_etudiant.php?id=$id'> ->Modifier</a></li>";
     }
 
     echo "</ul>";
@@ -51,4 +52,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('../inc/template.php'); ?>
+<?php require('template.php'); ?>

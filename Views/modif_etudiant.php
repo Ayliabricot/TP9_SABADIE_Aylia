@@ -3,12 +3,7 @@
     
     require_once("../Model/pdo.php");
 
-    $resultat = $dbPDO->prepare("INSERT INTO matiere(lib) VALUES (:lib)");
-    $resultat->execute([
-      "lib"=>$_POST["libelle"]
-    ]);
-
-    echo "<br>Requête effectuée.";
+    
 
 ?>
 
