@@ -30,6 +30,17 @@
 
     echo "</ul>";
 
+    $resultat = $dbPDO->prepare("SELECT * FROM classes");
+    $resultat->execute();
+
+    echo "<h3>Les classes :</h3><ul>";
+
+    $classes=$resultat->fetchAll();
+    foreach ($classes as $classe){
+      echo "<li>".$classe['libelle']."</li>";
+    }
+
+    echo "</ul>";
 
 ?>
 
