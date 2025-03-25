@@ -5,7 +5,7 @@
 
     $resultat = $dbPDO->prepare("INSERT INTO matiere(lib) VALUES (:lib)");
     $resultat->execute([
-      "lib"=>$_POST["libelle"]
+      "lib"=>strip_tags($_POST["libelle"])
     ]);
 
     echo "<br>Requête effectuée.";

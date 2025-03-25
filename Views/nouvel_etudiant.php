@@ -5,8 +5,8 @@
 
     $resultat = $dbPDO->prepare("INSERT INTO etudiants(prenom,nom,classe_id) VALUES (:prenom,:nom,:classe_id)");
     $resultat->execute([
-      "prenom"=>$_POST["prenom"],
-      "nom"=>$_POST["nom"],
+      "prenom"=>strip_tags($_POST["prenom"]),
+      "nom"=>strip_tags($_POST["nom"]),
       "classe_id"=>"1"
     ]);
 
