@@ -12,7 +12,7 @@
       echo "<br>Requête effectuée.";
     }
     else{
-      echo "<br>Echec de la requête : champ vide.";
+      echo "<br>Échec de la requête : champ vide.";
     }
 ?>
 

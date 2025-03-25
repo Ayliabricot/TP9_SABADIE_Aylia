@@ -8,9 +8,12 @@
       $resultat = $dbPDO->prepare("SELECT * FROM etudiants WHERE id=:id");
       $resultat->execute([
       "id"=>$_GET["id"]
-    ]);
+      ]);
 
-    $etudiant=$resultat->fetch();
+      $etudiant=$resultat->fetch();
+    }
+    else{
+      echo "<br>Échec de la modification : ID invalide.";
     }
 ?>
 

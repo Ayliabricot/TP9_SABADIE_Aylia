@@ -36,7 +36,7 @@
 <h3>Nouvelle matière : </h3>
 <form action="./Views/nouvelle_matiere.php" method="post">
         
-      Libelle : <input type="text" name="libelle" />
+      Libellé : <input type="text" name="libelle" />
             
       <input type="submit" value="Valider" />
 </form>

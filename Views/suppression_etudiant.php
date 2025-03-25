@@ -8,9 +8,11 @@
       $resultat = $dbPDO->prepare("DELETE FROM etudiants WHERE id=:id");
       $resultat->execute([
       "id"=>$_GET["id"]
-    ]);
-
-    echo "<br>Suppression de l'étudiant réussie.";
+      ]);
+      echo "<br>Suppression de l'étudiant réussie.";
+    }
+    else{
+      echo "<br>Échec de la suppression : ID invalide.";
     }
 ?>
 
