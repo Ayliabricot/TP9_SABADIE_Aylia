@@ -3,13 +3,17 @@
     
     require_once("../Model/pdo.php");
 
-    $resultat = $dbPDO->prepare("INSERT INTO matiere(lib) VALUES (:lib)");
-    $resultat->execute([
-      "lib"=>strip_tags($_POST["libelle"])
-    ]);
+    if (isset($_POST['libelle'])){
+      $resultat = $dbPDO->prepare("INSERT INTO matiere(lib) VALUES (:lib)");
+      $resultat->execute([
+        "lib"=>strip_tags($_POST["libelle"])
+      ]);
 
-    echo "<br>Requête effectuée.";
-
+      echo "<br>Requête effectuée.";
+    }
+    else{
+      echo "<br>Echec de la requête : champ vide.";
+    }
 ?>
 
 <form action="../index.php" method="post">
