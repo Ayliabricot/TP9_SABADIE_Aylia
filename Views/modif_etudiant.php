@@ -32,7 +32,7 @@
   
 ?>
 
-<h3>Nouvel étudiant : </h3>
+<h3>Modification de l'étudiant : </h3>
 <form action="" method="post">
     
   Prénom : <input type="text" name="prenom" value="<?= $_POST['prenom'] ?? $etudiant['prenom'] ?>" />

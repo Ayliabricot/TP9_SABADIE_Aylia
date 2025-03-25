@@ -12,7 +12,7 @@
 
     foreach ($etudiants as $etudiant){
       $id=$etudiant['id'];
-      echo "<li>".$etudiant["prenom"]." ".$etudiant["nom"]." ".$etudiant["classe"]."<a href='Views/modif_etudiant.php?id=$id'> ->Modifier</a></li>";
+      echo "<li>".$etudiant["prenom"]." ".$etudiant["nom"]." ".$etudiant["classe"]."-> <a href='Views/modif_etudiant.php?id=$id'>Modifier</a> | <a href='Views/suppression_etudiant.php?id=$id'>Supprimer</a></li>";
     }
 
     echo "</ul>";

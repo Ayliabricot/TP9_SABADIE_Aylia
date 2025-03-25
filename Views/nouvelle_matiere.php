@@ -17,7 +17,7 @@
 ?>
 
 <form action="../index.php" method="post">
-      <input type="submit" value="Valider" />
+      <input type="submit" value="Retourner à l'index" />
 </form>
 
 <?php $content = ob_get_clean(); ?>
